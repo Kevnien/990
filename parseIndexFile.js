@@ -17,6 +17,7 @@ const parseString = require('xml2js').parseString;
 const filing = filingsIndex.Filings2013[0];
 const { EIN, TaxPeriod } = filing;
 const data = { EIN, TaxPeriod };
+const array = [];
 
 fetch(
     filingsIndex.Filings2013[0].URL
@@ -45,13 +46,20 @@ parse2012v2d1 = (xmlDoc) => {
         data.officerName = officerData.Name[0];
         // const keyEmployee = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl[0];
         const keyEmployeesArray = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl;
-        keyEmployeesArray.forEach((employee, index) => {
-            data[`employee${index}Name`] = employee.PersonName[0];
-            data[`employee${index}Title`] = employee.Title[0];
-            data[`employee${index}AvgHoursPerWkDevotedToPosition`] = employee.AvgHoursPerWkDevotedToPosition[0];
-            data[`employee${index}Compensation`] = employee.Compensation[0];
-            data[`employee${index}ContriToEmplBenefitPlansEtc`] = employee.ContriToEmplBenefitPlansEtc[0];
-            data[`employee${index}ExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
+        keyEmployeesArray.forEach((employee) => {
+            data[`employeeName`] = employee.PersonName[0];
+            data[`employeeTitle`] = employee.Title[0];
+            data[`employeeAvgHoursPerWkDevotedToPosition`] = employee.AvgHoursPerWkDevotedToPosition[0];
+            data[`employeeCompensation`] = employee.Compensation[0];
+            data[`employeeContriToEmplBenefitPlansEtc`] = employee.ContriToEmplBenefitPlansEtc[0];
+            data[`employeeExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
+            array.push(data);
+            // data[`employee${index}Name`] = employee.PersonName[0];
+            // data[`employee${index}Title`] = employee.Title[0];
+            // data[`employee${index}AvgHoursPerWkDevotedToPosition`] = employee.AvgHoursPerWkDevotedToPosition[0];
+            // data[`employee${index}Compensation`] = employee.Compensation[0];
+            // data[`employee${index}ContriToEmplBenefitPlansEtc`] = employee.ContriToEmplBenefitPlansEtc[0];
+            // data[`employee${index}ExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
         });
         // data.AvgHoursPerWkDevotedToPosition = keyEmployee.AvgHoursPerWkDevotedToPosition[0];
         // data.HighestCompensated = result.Return.ReturnData[0].IRS990EZ[0].PartVIOfCompOfHighestPaidEmpl[0];
@@ -59,4 +67,6 @@ parse2012v2d1 = (xmlDoc) => {
     console.log(xmlDoc);
     console.log();
     console.log({ info, data });
+    console.log();
+    console.log({ array });
 }
