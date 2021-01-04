@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "convert-array-to-csv": "^2.0.0",
     "node-fetch": "^2.6.1",
     "perf_hooks": "^0.0.1",
     "xml2js": "^0.4.23"

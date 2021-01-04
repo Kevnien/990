@@ -1,5 +1,6 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
+const { convertArrayToCSV } = require('convert-array-to-csv');
 
 const rawdata = fs.readFileSync('2013Index.json');
 const filingsIndex = JSON.parse(rawdata);
@@ -64,9 +65,16 @@ parse2012v2d1 = (xmlDoc) => {
         // data.AvgHoursPerWkDevotedToPosition = keyEmployee.AvgHoursPerWkDevotedToPosition[0];
         // data.HighestCompensated = result.Return.ReturnData[0].IRS990EZ[0].PartVIOfCompOfHighestPaidEmpl[0];
     });
+
+    const csv = convertArrayToCSV(array);
+    fs.writeFile('myCSVFile.csv', csv, (err, data) => {
+        if (err) return console.log(err);
+        console.log(data);
+    });
+
     console.log(xmlDoc);
     console.log();
     console.log({ info, data });
     console.log();
-    console.log({ array });
+    console.log({ array, csv });
 }
