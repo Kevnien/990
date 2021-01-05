@@ -42,25 +42,29 @@ parse2012v2d1 = (xmlDoc) => {
     parseString(xmlDoc, (err, result) => {
         info = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl[0];
         const officerData = result.Return.ReturnHeader[0].Officer[0];
-        data.officer = {};
         data.officerTitle = officerData.Title[0];
         data.officerName = officerData.Name[0];
-        // const keyEmployee = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl[0];
         const keyEmployeesArray = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl;
+        data.preparerFirm = result.Return.ReturnHeader[0].PreparerFirm[0].PreparerFirmBusinessName[0].BusinessNameLine1[0];
+        // console.log({ employeesArray: keyEmployeesArray.map(emp => {
+        //     return {
+        //         name: emp.PersonName[0],
+        //         title: emp.Title[0],
+        //         avgHoursPerWk: emp.AvgHoursPerWkDevotedToPosition[0],
+        //         compensation: emp.Compensation[0],
+        //         contributionToBenefits: emp.ContriToEmplBenefitPlansEtc[0],
+        //         expenseAllowances: emp.ExpenseAccountOtherAllowances[0],
+        //     }
+        // }) });
         keyEmployeesArray.forEach((employee) => {
-            data[`employeeName`] = employee.PersonName[0];
-            data[`employeeTitle`] = employee.Title[0];
-            data[`employeeAvgHoursPerWkDevotedToPosition`] = employee.AvgHoursPerWkDevotedToPosition[0];
-            data[`employeeCompensation`] = employee.Compensation[0];
-            data[`employeeContriToEmplBenefitPlansEtc`] = employee.ContriToEmplBenefitPlansEtc[0];
-            data[`employeeExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
-            array.push(data);
-            // data[`employee${index}Name`] = employee.PersonName[0];
-            // data[`employee${index}Title`] = employee.Title[0];
-            // data[`employee${index}AvgHoursPerWkDevotedToPosition`] = employee.AvgHoursPerWkDevotedToPosition[0];
-            // data[`employee${index}Compensation`] = employee.Compensation[0];
-            // data[`employee${index}ContriToEmplBenefitPlansEtc`] = employee.ContriToEmplBenefitPlansEtc[0];
-            // data[`employee${index}ExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
+            const tmp = { ...data };
+            tmp[`employeeName`] = employee.PersonName[0];
+            tmp[`employeeTitle`] = employee.Title[0];
+            tmp[`employeeAvgHoursPerWkDevotedToPosition`] = employee.AvgHoursPerWkDevotedToPosition[0];
+            tmp[`employeeCompensation`] = employee.Compensation[0];
+            tmp[`employeeContriToEmplBenefitPlansEtc`] = employee.ContriToEmplBenefitPlansEtc[0];
+            tmp[`employeeExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
+            array.push(tmp);
         });
         // data.AvgHoursPerWkDevotedToPosition = keyEmployee.AvgHoursPerWkDevotedToPosition[0];
         // data.HighestCompensated = result.Return.ReturnData[0].IRS990EZ[0].PartVIOfCompOfHighestPaidEmpl[0];
@@ -69,12 +73,11 @@ parse2012v2d1 = (xmlDoc) => {
     const csv = convertArrayToCSV(array);
     fs.writeFile('myCSVFile.csv', csv, (err, data) => {
         if (err) return console.log(err);
-        console.log(data);
     });
 
     console.log(xmlDoc);
-    console.log();
-    console.log({ info, data });
-    console.log();
-    console.log({ array, csv });
+    // console.log();
+    // console.log({ info, data });
+    // console.log();
+    // console.log({ array, csv });
 }
