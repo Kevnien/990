@@ -38,13 +38,14 @@ fetch(
     });
     
 parse2012v2d1 = (xmlDoc) => {
-    let info;
     parseString(xmlDoc, (err, result) => {
-        info = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl[0];
         const officerData = result.Return.ReturnHeader[0].Officer[0];
+        const form990Ez = result.Return.ReturnData[0].IRS990EZ[0];
         data.officerTitle = officerData.Title[0];
         data.officerName = officerData.Name[0];
-        const keyEmployeesArray = result.Return.ReturnData[0].IRS990EZ[0].OfficerDirectorTrusteeKeyEmpl;
+        const keyEmployeesArray = form990Ez.OfficerDirectorTrusteeKeyEmpl;
+        data.highestPaidEmployeeCompensation = form990Ez.PartVIOfCompOfHighestPaidEmpl[0];
+        data.relatedOrgControlledEntity = form990Ez.RelatedOrgControlledEntity[0];
         data.preparerFirm = result.Return.ReturnHeader[0].PreparerFirm[0].PreparerFirmBusinessName[0].BusinessNameLine1[0];
         // console.log({ employeesArray: keyEmployeesArray.map(emp => {
         //     return {
@@ -77,7 +78,7 @@ parse2012v2d1 = (xmlDoc) => {
 
     console.log(xmlDoc);
     // console.log();
-    // console.log({ info, data });
+    // console.log({ data });
     // console.log();
     // console.log({ array, csv });
 }
