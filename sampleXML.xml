@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Return xmlns="http://www.irs.gov/efile" returnVersion="2012v2.1">
+  <ReturnHeader binaryAttachmentCount="0">
+    <Timestamp>2013-10-11T07:53:09-04:00</Timestamp>
+    <TaxPeriodEndDate>2013-06-30</TaxPeriodEndDate>
+    <PreparerFirm>
+      <PreparerFirmBusinessName>
+        <BusinessNameLine1>Ora Cliff Hyde CPA</BusinessNameLine1>
+      </PreparerFirmBusinessName>
+      <PreparerFirmUSAddress>
+        <AddressLine1>816 South Main Street</AddressLine1>
+        <City>London</City>
+        <State>KY</State>
+        <ZIPCode>40741</ZIPCode>
+      </PreparerFirmUSAddress>
+    </PreparerFirm>
+    <ReturnType>990EZ</ReturnType>
+    <TaxPeriodBeginDate>2012-07-01</TaxPeriodBeginDate>
+    <Filer>
+      <EIN>205585992</EIN>
+      <Name>
+        <BusinessNameLine1>BUSH ELEMENTARY PTO INC</BusinessNameLine1>
+      </Name>
+      <NameControl>BUSH</NameControl>
+      <USAddress>
+        <AddressLine1>PO BOX 2755</AddressLine1>
+        <City>LONDON</City>
+        <State>KY</State>
+        <ZIPCode>40743</ZIPCode>
+      </USAddress>
+    </Filer>
+    <Officer>
+      <Name>MANESSA HARVEY</Name>
+      <Title>PRESIDENT</Title>
+      <Phone>6068771363</Phone>
+      <DateSigned>2013-09-23</DateSigned>
+      <AuthorizeThirdParty>true</AuthorizeThirdParty>
+    </Officer>
+    <Preparer>
+      <Name>Ora Cliff Hyde</Name>
+      <PTIN>P00294693</PTIN>
+      <Phone>6068786061</Phone>
+      <DatePrepared>2013-10-11</DatePrepared>
+      <SelfEmployed>X</SelfEmployed>
+    </Preparer>
+    <TaxYear>2012</TaxYear>
+    <BuildTS>2016-02-25 16:41:14Z</BuildTS>
+  </ReturnHeader>
+  <ReturnData documentCount="5">
+    <IRS990EZ documentId="IRS990EZ">
+      <MethodOfAccountingCash>X</MethodOfAccountingCash>
+      <Organization501c3 referenceDocumentId="990A">X</Organization501c3>
+      <GrossReceipts>128268</GrossReceipts>
+      <InfoInScheduleOPartI>X</InfoInScheduleOPartI>
+      <FundraisingGrossIncome>128268</FundraisingGrossIncome>
+      <SpecialEventsNetIncomeLoss>128268</SpecialEventsNetIncomeLoss>
+      <TotalRevenue>128268</TotalRevenue>
+      <OtherExpensesTotal>97629</OtherExpensesTotal>
+      <TotalExpenses>97629</TotalExpenses>
+      <ExcessOrDeficitForYear>30639</ExcessOrDeficitForYear>
+      <NetAssetsOrFundBalancesBOY>5825</NetAssetsOrFundBalancesBOY>
+      <NetAssetsOrFundBalancesEOY>36464</NetAssetsOrFundBalancesEOY>
+      <CashSavingsAndInvestments>
+        <BOY>5825</BOY>
+        <EOY>36464</EOY>
+      </CashSavingsAndInvestments>
+      <LandAndBuildings>
+        <BOY>0</BOY>
+        <EOY>0</EOY>
+      </LandAndBuildings>
+      <OtherAssetsTotal>
+        <BOY>0</BOY>
+        <EOY>0</EOY>
+      </OtherAssetsTotal>
+      <TotalAssets>
+        <BOY>5825</BOY>
+        <EOY>36464</EOY>
+      </TotalAssets>
+      <SumOfTotalLiabilities>
+        <BOY>0</BOY>
+        <EOY>0</EOY>
+      </SumOfTotalLiabilities>
+      <NetAssetsOrFundBalances>
+        <BOY>5825</BOY>
+        <EOY>36464</EOY>
+      </NetAssetsOrFundBalances>
+      <PrimaryExemptPurpose>PUBLIC SCHOOL ACTIVITY</PrimaryExemptPurpose>
+      <ProgramServiceAccomplishment>
+        <DescriptionProgramServiceAccom>PARENT-TEACHER ORGANIZATION THAT HELPS SUPPORT SCHOOL ACTIVITIES</DescriptionProgramServiceAccom>
+      </ProgramServiceAccomplishment>
+      <TotalProgramServiceExpenses>0</TotalProgramServiceExpenses>
+      <OfficerDirectorTrusteeKeyEmpl>
+        <PersonName>MANESSA HARVEY</PersonName>
+        <Title>PRESIDENT</Title>
+        <AvgHoursPerWkDevotedToPosition>0.00</AvgHoursPerWkDevotedToPosition>
+        <Compensation>0</Compensation>
+        <ContriToEmplBenefitPlansEtc>0</ContriToEmplBenefitPlansEtc>
+        <ExpenseAccountOtherAllowances>0</ExpenseAccountOtherAllowances>
+      </OfficerDirectorTrusteeKeyEmpl>
+      <OfficerDirectorTrusteeKeyEmpl>
+        <PersonName>SHANNON GRIFFIN</PersonName>
+        <Title>VICE PRESIDENT</Title>
+        <AvgHoursPerWkDevotedToPosition>0.00</AvgHoursPerWkDevotedToPosition>
+        <Compensation>0</Compensation>
+        <ContriToEmplBenefitPlansEtc>0</ContriToEmplBenefitPlansEtc>
+        <ExpenseAccountOtherAllowances>0</ExpenseAccountOtherAllowances>
+      </OfficerDirectorTrusteeKeyEmpl>
+      <OfficerDirectorTrusteeKeyEmpl>
+        <PersonName>MICHAELEANA BROWN</PersonName>
+        <Title>TREASURER</Title>
+        <AvgHoursPerWkDevotedToPosition>0.00</AvgHoursPerWkDevotedToPosition>
+        <Compensation>0</Compensation>
+        <ContriToEmplBenefitPlansEtc>0</ContriToEmplBenefitPlansEtc>
+        <ExpenseAccountOtherAllowances>0</ExpenseAccountOtherAllowances>
+      </OfficerDirectorTrusteeKeyEmpl>
+      <OfficerDirectorTrusteeKeyEmpl>
+        <PersonName>JENNIFER TYLER</PersonName>
+        <Title>SECRETARY</Title>
+        <AvgHoursPerWkDevotedToPosition>0.00</AvgHoursPerWkDevotedToPosition>
+        <Compensation>0</Compensation>
+        <ContriToEmplBenefitPlansEtc>0</ContriToEmplBenefitPlansEtc>
+        <ExpenseAccountOtherAllowances>0</ExpenseAccountOtherAllowances>
+      </OfficerDirectorTrusteeKeyEmpl>
+      <ActivitiesNotPreviouslyRpt>false</ActivitiesNotPreviouslyRpt>
+      <MadeChangesToOrgnzngEtcDoc>false</MadeChangesToOrgnzngEtcDoc>
+      <OrganizationHadUBI>false</OrganizationHadUBI>
+      <SubjectToProxyTax>false</SubjectToProxyTax>
+      <OrganizationDissolvedEtc>false</OrganizationDissolvedEtc>
+      <DidOrgFileForm1120POLThisYear>false</DidOrgFileForm1120POLThisYear>
+      <MadeLoansToFromOfficers>false</MadeLoansToFromOfficers>
+      <EngagedInExcessBenefitTrans>false</EngagedInExcessBenefitTrans>
+      <ProhibitedTaxShelterTrans>false</ProhibitedTaxShelterTrans>
+      <TheBooksAreInCareOf>
+        <NamePerson>MICHAELEANA BROWN</NamePerson>
+        <AddressUS>
+          <AddressLine1>205 CROWN POINT ESTATES</AddressLine1>
+          <City>LONDON</City>
+          <State>KY</State>
+          <ZIPCode>40741</ZIPCode>
+        </AddressUS>
+        <TelephoneNumber>6068771363</TelephoneNumber>
+      </TheBooksAreInCareOf>
+      <ForeignFinancialAccount>false</ForeignFinancialAccount>
+      <ForeignOffice>false</ForeignOffice>
+      <MaintainAnyDonorAdvisedFunds>false</MaintainAnyDonorAdvisedFunds>
+      <DoesOrgHaveHospital>false</DoesOrgHaveHospital>
+      <TanningServicesProvided>false</TanningServicesProvided>
+      <RelatedOrgControlledEntity>false</RelatedOrgControlledEntity>
+      <TransactionWithControlEntity>false</TransactionWithControlEntity>
+      <EngagePoliticalCmpgnActivities>false</EngagePoliticalCmpgnActivities>
+      <OperatingSchool>false</OperatingSchool>
+      <PartVIOfCompOfHighestPaidEmpl>NONE</PartVIOfCompOfHighestPaidEmpl>
+      <PartVIAHghstPaidCntrctProfSer>NONE</PartVIAHghstPaidCntrctProfSer>
+      <FiledScheduleA>true</FiledScheduleA>
+    </IRS990EZ>
+    <IRS990ScheduleA documentId="990A">
+      <PubliclySupportedOrg170b1Avi>X</PubliclySupportedOrg170b1Avi>
+      <GiftsGrantsContribReceived170>
+        <CurrentTaxYearMinus4Years>54094</CurrentTaxYearMinus4Years>
+        <CurrentTaxYearMinus3Years>61185</CurrentTaxYearMinus3Years>
+        <CurrentTaxYearMinus2Years>74050</CurrentTaxYearMinus2Years>
+        <CurrentTaxYearMinus1Year>78481</CurrentTaxYearMinus1Year>
+        <CurrentTaxYear>128036</CurrentTaxYear>
+        <Total>395846</Total>
+      </GiftsGrantsContribReceived170>
+      <Total170>
+        <CurrentTaxYearMinus4Years>54094</CurrentTaxYearMinus4Years>
+        <CurrentTaxYearMinus3Years>61185</CurrentTaxYearMinus3Years>
+        <CurrentTaxYearMinus2Years>74050</CurrentTaxYearMinus2Years>
+        <CurrentTaxYearMinus1Year>78481</CurrentTaxYearMinus1Year>
+        <CurrentTaxYear>128036</CurrentTaxYear>
+        <Total>395846</Total>
+      </Total170>
+      <PublicSupportTotal170>395846</PublicSupportTotal170>
+      <TotalSupport>395846</TotalSupport>
+      <PublicSupportPertcentage170>1.00000</PublicSupportPertcentage170>
+      <PublicSupportPertcentPriorYear>1.00000</PublicSupportPertcentPriorYear>
+      <ThirtyThreePercntTestsCY170>X</ThirtyThreePercntTestsCY170>
+    </IRS990ScheduleA>
+    <IRS990ScheduleC documentId="990C" />
+    <IRS990ScheduleG documentId="990G">
+      <SpecialFundraisingEvents>X</SpecialFundraisingEvents>
+      <EventsInformation>
+        <GrossReceiptsEvent1>128036</GrossReceiptsEvent1>
+        <GrossRevenueEvent1>128036</GrossRevenueEvent1>
+        <GrossReceiptsTotal>128036</GrossReceiptsTotal>
+        <GrossRevenueTotalEvents>128036</GrossRevenueTotalEvents>
+        <NetIncomeSummary>128036</NetIncomeSummary>
+      </EventsInformation>
+    </IRS990ScheduleG>
+    <IRS990ScheduleO documentId="990O">
+      <GeneralExplanation>
+        <Identifier>O01</Identifier>
+        <ReturnReference>Description of other expenses Part I line 16</ReturnReference>
+        <Explanation>Description Amount SUPPLIES 2,914 AWARDS/REWARDS 1,346 FUNDRAISING EXPENSE 82,636 PROGRAMS/PROJECTS AND PRESENTATIONS 10,733</Explanation>
+      </GeneralExplanation>
+    </IRS990ScheduleO>
+  </ReturnData>
+</Return>
