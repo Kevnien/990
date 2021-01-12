@@ -19,23 +19,29 @@ const filing = filingsIndex.Filings2013[0];
 const { EIN, TaxPeriod } = filing;
 const data = { EIN, TaxPeriod };
 const array = [];
+const unhandled = {};
 
-fetch(
-    filingsIndex.Filings2013[0].URL
-    , { method: 'GET' }
-    ).then(res => res.text()).then(xmlDoc => {
-        // console.log(xmlDoc);
-        parseString(xmlDoc, (err, result) => {
-            const { returnVersion } = result.Return.$;
-            switch ( returnVersion ) {
-                case '2012v2.1':
-                    parse2012v2d1(xmlDoc);
-                    break;
-                default:
-                    console.log(`Return version ${returnVersion} not handled.`);
-            }
-        })
-    });
+parseFiling = (filingUrl) => {
+    fetch(
+        filingUrl
+        // filingsIndex.Filings2013[0].URL
+        , { method: 'GET' }
+        ).then(res => res.text()).then(xmlDoc => {
+            // console.log(xmlDoc);
+            parseString(xmlDoc, (err, result) => {
+                const { returnVersion } = result.Return.$;
+                switch ( returnVersion ) {
+                    case '2012v2.1':
+                        parse2012v2d1(xmlDoc);
+                        break;
+                    default:
+                        handleUnhandled(returnVersion);
+                        console.log(`Return version ${returnVersion} not handled.`);
+                }
+            })
+        });
+};
+
     
 parse2012v2d1 = (xmlDoc) => {
     parseString(xmlDoc, (err, result) => {
@@ -70,16 +76,6 @@ parse2012v2d1 = (xmlDoc) => {
         data.state = address.State[0];
         data.zipCode = address.ZIPCode[0];
         data.formType = form990Ez.$.documentId;
-        // console.log({ employeesArray: keyEmployeesArray.map(emp => {
-        //     return {
-        //         name: emp.PersonName[0],
-        //         title: emp.Title[0],
-        //         avgHoursPerWk: emp.AvgHoursPerWkDevotedToPosition[0],
-        //         compensation: emp.Compensation[0],
-        //         contributionToBenefits: emp.ContriToEmplBenefitPlansEtc[0],
-        //         expenseAllowances: emp.ExpenseAccountOtherAllowances[0],
-        //     }
-        // }) });
         keyEmployeesArray.forEach((employee) => {
             const tmp = { ...data };
             tmp[`employeeName`] = employee.PersonName[0];
@@ -90,13 +86,6 @@ parse2012v2d1 = (xmlDoc) => {
             tmp[`employeeExpenseAccountOtherAllowances`] = employee.ExpenseAccountOtherAllowances[0];
             array.push(tmp);
         });
-        // data.AvgHoursPerWkDevotedToPosition = keyEmployee.AvgHoursPerWkDevotedToPosition[0];
-        // data.HighestCompensated = result.Return.ReturnData[0].IRS990EZ[0].PartVIOfCompOfHighestPaidEmpl[0];
-    });
-
-    const csv = convertArrayToCSV(array);
-    fs.writeFile('myCSVFile.csv', csv, (err, data) => {
-        if (err) return console.log(err);
     });
 
     // console.log(xmlDoc);
@@ -105,3 +94,18 @@ parse2012v2d1 = (xmlDoc) => {
     // console.log();
     // console.log({ array, csv });
 }
+
+handleUnhandled = (returnVersion) => {
+    unhandled[returnVersion] ? unhandled[returnVersion]++ : unhandled[returnVersion] = 1;
+}
+
+writeArrayToCsv = (array, csvFileName) => {
+    const csv = convertArrayToCSV(array);
+    fs.writeFile(`${csvFileName}.csv`, csv, (err, data) => {
+        if (err) return console.log(err);
+    });
+}
+
+parseFiling(filingsIndex.Filings2013[0].URL);
+writeArrayToCsv(array, 'myCSVFileFromMethod');
+
